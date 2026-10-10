@@ -1,0 +1,9 @@
+Bagging (Bootstrap Aggregating)
+High-level intuition: “Train many similar models in parallel on slightly different versions of the data, then vote/average.”
+
+Boosting
+High-level intuition: “Train models sequentially; each new model focuses on fixing the previous model’s mistakes.” This often reduces bias (turns weak learners into a strong one).
+
+Important technical note: stats.mode returns shape issues sometimes; often you need vote_preds.ravel() to match y_test shape. If your code runs, fine, but keep this in mind.
+
+objective='multi:softmax' means: directly output the predicted class label (0/1/2), not probabilities.
